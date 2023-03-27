@@ -1,0 +1,11 @@
+.heading {
+    margin-top: 20px;
+    font-size: 42px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul li {
+    padding: 10px;
+    font-size: 20px;
+}
