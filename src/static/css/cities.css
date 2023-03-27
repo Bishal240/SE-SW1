@@ -1,0 +1,38 @@
+table {
+    width: 60%;
+    margin-top: 2em;
+    margin-bottom: 2rem;
+    color: #212529;
+}
+
+
+th {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+table th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+
+.start {
+  text-align: start;
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+}

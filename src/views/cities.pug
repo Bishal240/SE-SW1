@@ -1,0 +1,22 @@
+extends layout.pug
+
+block head
+  link(rel="stylesheet", href="/css/cities.css")
+
+block content
+
+  h2 List of Cities
+  hr
+  
+  table.center
+    thead
+      th.start Code
+      th.start City Name
+      th.start Population
+    tbody
+      each row in rows
+        tr
+          td #{row.CountryCode}
+          td #{row.Name}
+          - const population = new Intl.NumberFormat().format(row.Population);
+          td #{population}
