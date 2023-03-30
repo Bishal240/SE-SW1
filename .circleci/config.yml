@@ -5,8 +5,8 @@ jobs:
   build:
     working_directory: ~/SE-SW1/src
     docker:
-      image: cimg/node:lts
+    -  image: cimg/node:lts
     steps:
-      checkout:
+    -  checkout:
          path: ~/SE-SW1
-      run: npm install
+    -  run: npm install
