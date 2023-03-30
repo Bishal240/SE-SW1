@@ -5,7 +5,7 @@ import cityRouter from './routes/city.mjs';
 
 const app = express();
 const PORT = 3000;
-
+//middle
 app.set("view engine", "pug");
 app.use(express.static("static"));
 app.use('/cities', cityRouter);
