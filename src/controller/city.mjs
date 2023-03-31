@@ -9,4 +9,12 @@ const getAllCityViews = async (req, res) => {
     return res.render("cities", { rows, fields });
 }
 
-export default getAllCityViews;
+const getTopPopulatedCitiesViews = async (req, res) => {
+    const [rows, fields] = await db.getTopPopulatedCities();
+    return res.render("index", {rows, fields});
+}
+
+export {
+    getAllCityViews,
+    getTopPopulatedCitiesViews,
+};
