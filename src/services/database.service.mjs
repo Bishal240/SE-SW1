@@ -29,4 +29,15 @@ export default class DatabaseService {
             return [];
         }
     }
+    
+    async getTopPopulatedCities() {
+        try {
+            const query = " SELECT Name AS City, Population FROM city ORDER BY Population DESC LIMIT 10;";
+            const cities = await this.conn.execute(query);
+            return cities;
+        }catch(error) {
+            console.error(error);
+            return [];
+        }
+    }
 }
