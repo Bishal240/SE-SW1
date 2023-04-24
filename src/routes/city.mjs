@@ -1,8 +1,12 @@
 import express from "express";
-import {getAllCityViews} from '../controller/city.mjs';
+import cityController from '../controller/city.mjs';
 
 const router = express.Router();
 
-router.get("/", getAllCityViews);
+router.get("/", cityController.getAllCityViews);
+
+router.get("/top-countries/:N", cityController.getNPopulatedCountries);
+
+router.get("/:id", cityController.getCityByID);
 
 export default router;
