@@ -9,12 +9,21 @@ const getAllCityViews = async (req, res) => {
     return res.render("cities", { rows, fields });
 }
 
-const getTopPopulatedCitiesViews = async (req, res) => {
-    const [rows, fields] = await db.getTopPopulatedCities();
-    return res.render("index", {rows, fields});
+const getNPopulatedCountries = async (req, res) => {
+    const N = req.params.N;
+
+    const [rows, fields] = await db.getNPopulatedCountries(N);
+    return res.render('populated', { rows, fields });
+
 }
 
-export {
-    getAllCityViews,
-    getTopPopulatedCitiesViews,
-};
+
+const getCityByID = async (req, res) => {
+    const cityId = req.params.id;
+    const city = await db.getCityById(cityId);
+
+    return res.render("city", { city });
+}
+
+
+export default {getAllCityViews, getNPopulatedCountries, getCityByID};
