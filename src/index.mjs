@@ -1,7 +1,7 @@
 import express from "express";
 import DatabaseService from "./services/database.service.mjs";
 import cityRouter from './routes/city.mjs';
-import { getTopPopulatedCitiesViews } from "./controller/city.mjs";
+import cityController from "./controller/city.mjs";
 
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.static("static"));
 app.use('/cities', cityRouter);
 
 
-app.get("/", getTopPopulatedCitiesViews);
+app.get("/", cityController.getTopPopulatedCitiesViews);
 
 
 app.get("/about", (req, res) => {
